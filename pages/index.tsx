@@ -87,10 +87,9 @@ const Face = styled.div<{ faceState: number }>`
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background-image: url(img.png);
+  background-image: url('img.png');
   background-repeat: no-repeat;
   background-size: cover;
-  //background-position: -990px 0;
   @media screen and (max-width: 480px) {
     width: 40px;
     height: 40px;
@@ -210,7 +209,7 @@ const BombBlock = styled.div`
   text-indent: 100%;
   white-space: nowrap;
   vertical-align: center;
-  background-image: url(img.png);
+  background-image: url('img.png');
   background-repeat: no-repeat;
   background-position: -300px 0;
 `
@@ -224,7 +223,7 @@ const Colors = styled.div<{ numColor: number }>`
   text-indent: 100%;
   white-space: nowrap;
   vertical-align: center;
-  background-image: url(img.png);
+  background-image: url('img.png');
   background-repeat: no-repeat;
   background-position: ${(props) => (props.numColor - 1) * -30}px 0;
 `
@@ -238,13 +237,12 @@ const Flags = styled.div<{ numColor: number }>`
   text-indent: 100%;
   white-space: nowrap;
   vertical-align: center;
-  background-image: url(img.png);
+  background-image: url('img.png');
   background-repeat: no-repeat;
   background-position: ${(props) => (props.numColor - 4) * -30}px 0;
 `
 
 const Home: NextPage = () => {
-  // prettier-ignore
   const [board, setBoard] = useState([
     [9, 9, 9, 9, 9, 9, 9, 9, 9],
     [9, 9, 9, 9, 9, 9, 9, 9, 9],
@@ -254,7 +252,7 @@ const Home: NextPage = () => {
     [9, 9, 9, 9, 9, 9, 9, 9, 9],
     [9, 9, 9, 9, 9, 9, 9, 9, 9],
     [9, 9, 9, 9, 9, 9, 9, 9, 9],
-    [9, 9, 9, 9, 9, 9, 9, 9, 9]
+    [9, 9, 9, 9, 9, 9, 9, 9, 9],
   ])
   const [isPlaying, setIsPlaying] = useState(false)
   const tmpBombs: { y: number; x: number }[] = []
