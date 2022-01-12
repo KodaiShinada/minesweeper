@@ -8,7 +8,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: white;
+  background: coral;
 `
 
 const Board = styled.div`
