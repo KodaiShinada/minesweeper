@@ -102,27 +102,27 @@ const Face = styled.div<{ faceState: number }>`
   }
 `
 
-const CounterL = styled.div`
+const Counter = styled.div`
   position: relative;
   left: -15px;
   display: flex;
   margin: auto;
   text-align: center;
   background: black;
-  border-top: 2px solid gray;
-  border-right: 2px solid white;
-  border-left: 2px solid gray;
+  border-top: 3px solid gray;
+  border-right: 3px solid white;
+  border-left: 3px solid gray;
   @media screen and (max-width: 480px) {
     width: 75px;
     height: 45px;
   }
   @media screen and (min-width: 481px) {
-    width: 150px;
-    height: 90px;
+    width: 21vh;
+    height: 12vh;
   }
 `
 
-const CounterR = styled.div`
+const Timer = styled.div`
   position: relative;
   right: -15px;
   display: flex;
@@ -136,8 +136,8 @@ const CounterR = styled.div`
     height: 45px;
   }
   @media screen and (min-width: 481px) {
-    width: 150px;
-    height: 90px;
+    width: 21vh;
+    height: 12vh;
   }
 `
 
@@ -254,18 +254,15 @@ const Home: NextPage = () => {
     [9, 9, 9, 9, 9, 9, 9, 9, 9],
     [9, 9, 9, 9, 9, 9, 9, 9, 9],
   ])
-  const [isPlaying, setIsPlaying] = useState(false)
-  const tmpBombs: { y: number; x: number }[] = []
   //爆弾数
   const numberOfBombs = 10
+  const [isPlaying, setIsPlaying] = useState(false)
+  const tmpBombs: { y: number; x: number }[] = []
   const [bombs, setBombs] = useState(tmpBombs)
   const [playable, setPlayable] = useState(true)
   const [bombCount, setBombCount] = useState(numberOfBombs)
-
   const [face, setFace] = useState(0)
-
   const [count, setCount] = useState(0)
-
   const countup = () => {
     setCount((count) => count + 1)
   }
@@ -418,29 +415,25 @@ const Home: NextPage = () => {
         <Board>
           <GameWrapper>
             <BoardUp>
-              <CounterL>
+              <Counter>
                 <Count>{bombCount < -9 ? '-' : 0}</Count>
-
                 <Count>
                   {bombCount < -9
-                    ? Math.abs(bombCount - (bombCount % 10))
+                    ? (bombCount - (bombCount % 10)) / -10
                     : bombCount < 0
                     ? '-'
-                    : bombCount - (bombCount % 10)}
+                    : (bombCount - (bombCount % 10)) / 10}
                 </Count>
-
                 <Count>{bombCount < 0 ? Math.abs(bombCount % 10) : bombCount % 10}</Count>
-              </CounterL>
+              </Counter>
               <FaceWrapper>
                 <Face faceState={face} onClick={() => reset()} />
               </FaceWrapper>
-              <CounterR>
+              <Timer>
                 <Count>{((count % 1000) - (count % 100)) / 100}</Count>
-
                 <Count>{((count % 100) - (count % 10)) / 10}</Count>
-
                 <Count>{count % 10}</Count>
-              </CounterR>
+              </Timer>
             </BoardUp>
             <BoardUnder>
               {board.map((row, y) =>
