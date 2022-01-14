@@ -67,12 +67,12 @@ const FaceWrapper = styled.div`
   border-left: 5px solid white;
   outline: solid 2px gray;
   @media screen and (max-width: 480px) {
-    width: 45px;
-    height: 45px;
+    width: 12vh;
+    height: 12vh;
   }
   @media screen and (min-width: 481px) {
-    width: 90px;
-    height: 90px;
+    width: 12vh;
+    height: 12vh;
   }
 `
 
@@ -104,7 +104,7 @@ const Face = styled.div<{ faceState: number }>`
 
 const Counter = styled.div`
   position: relative;
-  left: -15px;
+  left: -2vh;
   display: flex;
   margin: auto;
   text-align: center;
@@ -113,8 +113,8 @@ const Counter = styled.div`
   border-right: 3px solid white;
   border-left: 3px solid gray;
   @media screen and (max-width: 480px) {
-    width: 75px;
-    height: 45px;
+    width: 21vh;
+    height: 12vh;
   }
   @media screen and (min-width: 481px) {
     width: 21vh;
@@ -124,16 +124,16 @@ const Counter = styled.div`
 
 const Timer = styled.div`
   position: relative;
-  right: -15px;
+  right: -2vh;
   display: flex;
   margin: auto;
   background: black;
-  border-top: 2px solid gray;
-  border-right: 2px solid white;
-  border-left: 2px solid gray;
+  border-top: 3px solid gray;
+  border-right: 3px solid white;
+  border-left: 3px solid gray;
   @media screen and (max-width: 480px) {
-    width: 75px;
-    height: 45px;
+    width: 21vh;
+    height: 12vh;
   }
   @media screen and (min-width: 481px) {
     width: 21vh;
@@ -145,16 +145,16 @@ const Count = styled.div`
   position: relative;
   color: red;
   @media screen and (max-width: 480px) {
-    top: -11px;
-    width: 25px;
-    height: 45px;
-    font-size: 45px;
+    top: -2.7vh;
+    width: 7vh;
+    height: 4vh;
+    font-size: 12vh;
   }
   @media screen and (min-width: 481px) {
-    top: -20px;
-    width: 50px;
-    height: 90px;
-    font-size: 90px;
+    top: -2.7vh;
+    width: 7vh;
+    height: 4vh;
+    font-size: 12vh;
   }
 `
 
